@@ -15,7 +15,6 @@ public class Exercício08 {
 			cidade = teclado.nextLine();
 		} while(!cidade.equals("Sao Paulo"));
 		
-
 	}
 
 }
