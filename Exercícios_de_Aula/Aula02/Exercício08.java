@@ -13,7 +13,7 @@ public class Exercício08 {
 		do {
 			System.out.println("Digite o nome de uma cidade: ");
 			cidade = teclado.nextLine();
-		} while(!cidade.equals("Sao Paulo"));
+		} while(cidade.equals("Sao Paulo"));
 		
 
 	}
