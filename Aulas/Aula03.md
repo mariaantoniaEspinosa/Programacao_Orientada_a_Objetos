@@ -1,0 +1,25 @@
+# Conceitos 
+- Uma **Classe** é uma estrutura que abstrai um conjunto de objetos com características similares.
+- a Classe define o comportamento dos objetos através de métodos e atributos
+  - **métodos** = funções na liguaguem estruturada
+  - **atributos** = variáveis na linguagem estruturada
+- Diagrama de Classes = tem a mesma estrutura no mundo todo
+  - em negrito: nome da classa
+  - abaixo: nome dos atributos
+  - abaixo: nome dos metodos (possíveis parâmtros enviados
+- Ideia de reutilização de classe
+- **Objeto** é a instância de uma classe
+- **Estado** e **Comportamento**
+  - Estado é representado por seus atributos
+  - Comportamento é representado por seus métodos.
+- **Encapsulamento** é o empacotamento dos atributos e métodos numa classe
+  - público(+)
+  - privado(-)
+  - protegido(#)
+# O que veremos futuramente
+- **Subclasse** é a classe filha que herda os atrubutos e os métodos da classe mãe (herança)
+- **Mensagem** é a troca de informação entre objetos
+- **Abstração**: classe não instanciável
+- **Associação**: utlização de recursos entre objetos
+- **Polimorfismo**
+- **Linguagem UML**
