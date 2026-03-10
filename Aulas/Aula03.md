@@ -172,3 +172,44 @@ public class Principal {
 }
 
 ```
+# Exercício 02
+```
+package pkg;
+
+import java.util.Scanner;
+
+public class Disciplina {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		
+		Professor p1 = new Professor();
+		Laboratorio L1 = new Laboratorio();
+		
+		p1.nome = "Ricardo";
+		L1.numeroLab = "108";
+		
+		System.out.println("O nome do Professor é: " + p1.nome);
+		System.out.println("O Laboratorio será o " + L1.numeroLab);
+
+	}
+
+}
+
+```
+```
+package pkg;
+
+public class Professor {
+	public String nome;
+}
+
+```
+```
+package pkg;
+
+public class Laboratorio {
+	public String numeroLab;
+}
+
+```
