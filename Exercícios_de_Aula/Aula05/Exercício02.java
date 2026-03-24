@@ -30,9 +30,7 @@ public class Exercício02 {
 		try {
 			int div = a / b;
 			System.out.println(" Divisão: "+ div);
-		}  catch (InputMismatchException e) {
-			System.out.println("Erro: tipo de variável inválida!");
-		}  catch (ArithmeticException e) {
+		} catch (ArithmeticException e) {
 			System.out.println("Erro: divisão por zero!");
 		}
 
