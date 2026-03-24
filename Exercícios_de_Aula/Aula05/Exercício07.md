@@ -1,0 +1,24 @@
+# Pesquisa sobre Exceções 
+- Todas as exceções em Java têm um tipo específico associado ao motivo pelo qual a exceção ocorreu: o tipo particular de falha do programa.
+- Há dois tipos principais de exeções:
+  - Checked Exceptions: ocorrem em tempo de compilação. Se não forem tratadas, o programa não será compilado.
+  - Unchecked Exceptions: ocorrem em tempo de execução. Se não forem tratadas, o programa será encerrado.
+- Uma hierarquia simplificada de classes de exceção em Java pode ser representada da seguinte forma:
+- Throwable
+  - Error
+  - Exception
+  - CloneNotSupportedException
+  - InterruptedException
+  - ReflectiveOperationException
+    - ClassNotFoundException
+    - IllegalAccessException
+    - InstantiationException
+    - NoSuchFieldException
+    - NoSuchMethodException
+  - RuntimeException
+    - NullPointerException
+    - ArithmeticException
+    - IllegalArgumentException
+    - IndexOutOfBoundException
+    - NumberFormatException
+- Todas as exceções são tratadas usando blocos especiais try e catch, que são padrão na maioria das linguagens de programação, incluindo Java.
