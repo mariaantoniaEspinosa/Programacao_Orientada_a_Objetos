@@ -41,7 +41,7 @@ public class Exercício03 {
 		} catch (InputMismatchException e) {
 			System.out.println("Entrada inválida: " + e.toString());
 		}  catch (Exception e) {
-			System.out.println("Exceção: " + e.getMessage());
+			System.out.println("Exceção: " + e.toString());
 		}
 	}
 
