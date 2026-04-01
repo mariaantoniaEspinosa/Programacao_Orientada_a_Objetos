@@ -13,6 +13,7 @@
 
 - 7 - Crie uma classe chamada Pedido com os atributos numero, produto, preco e quantidade. Crie um construtor que inicialize esses atributos. Implemente os métodos calcularSubtotal(), que retorna o valor total do pedido (preço multiplicado pela quantidade), calcularDesconto(double percentual), que retorna o valor do desconto aplicado ao subtotal, calcularTotal(double percentualDesconto), que retorna o valor final do pedido após o desconto, e resumoPedido(), que retorna uma string com as informações principais do pedido.
 
+### FALTA FAZER!!!
 - 8 - Crie uma classe chamada Filme com os atributos titulo, duracao (em minutos) e classificacaoEtaria. Crie um construtor que inicialize esses atributos. Implemente os métodos converterDuracaoHoras(), que retorna a duração do filme em horas, podeAssistir(int idade), que retorna true se a idade informada for maior ou igual à classificação etária, e descricaoFilme(), que retorna uma string com as informações do filme.
 
 - 9 - Crie uma classe chamada Livro com os atributos titulo, autor, paginas e emprestado (boolean). Crie um construtor que inicialize os atributos. Implemente os métodos emprestar(), que marca o livro como emprestado caso esteja disponível e retorna true, devolver(), que marca o livro como disponível novamente, estaDisponivel(), que retorna true caso o livro não esteja emprestado, e detalhesLivro(), que retorna uma string contendo as informações do livro.
