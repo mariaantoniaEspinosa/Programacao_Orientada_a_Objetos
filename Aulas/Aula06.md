@@ -1,6 +1,7 @@
 # Lista de exercícios para praticarmos para Prova.
 - 1 - Crie uma classe chamada Produto com os atributos nome, preco e quantidade. Crie um construtor que inicialize esses atributos. Implemente os métodos calcularValorTotalEstoque(), que deve retornar o valor total do estoque (preço multiplicado pela quantidade), temEstoque(), que retorna true se a quantidade for maior que zero, adicionarEstoque(int quantidade), que adiciona produtos ao estoque, e vender(int quantidade), que diminui a quantidade em estoque apenas se houver produtos suficientes, retornando true caso a venda seja realizada e false caso contrário.
 
+### Não fazer a questão 2!
 - 2 - Crie uma classe chamada ContaBancaria com os atributos titular e saldo. Crie um construtor que inicialize esses atributos. Implemente os métodos depositar(double valor), que adiciona um valor ao saldo, sacar(double valor), que realiza o saque apenas se houver saldo suficiente e retorna true ou false, transferir(double valor, ContaBancaria destino), que transfere um valor para outra conta caso haja saldo suficiente, e consultarSaldo(), que retorna o saldo atual da conta.
 
 - 3 - Crie uma classe chamada Aluno com os atributos nome, nota1, nota2 e nota3. Crie um construtor que inicialize esses atributos. Implemente os métodos calcularMedia(), que retorna a média das três notas, aprovado(), que retorna true se a média for maior ou igual a 7, maiorNota(), que retorna a maior nota entre as três, e menorNota(), que retorna a menor nota entre elas.
@@ -13,7 +14,6 @@
 
 - 7 - Crie uma classe chamada Pedido com os atributos numero, produto, preco e quantidade. Crie um construtor que inicialize esses atributos. Implemente os métodos calcularSubtotal(), que retorna o valor total do pedido (preço multiplicado pela quantidade), calcularDesconto(double percentual), que retorna o valor do desconto aplicado ao subtotal, calcularTotal(double percentualDesconto), que retorna o valor final do pedido após o desconto, e resumoPedido(), que retorna uma string com as informações principais do pedido.
 
-### FALTA FAZER!!!
 - 8 - Crie uma classe chamada Filme com os atributos titulo, duracao (em minutos) e classificacaoEtaria. Crie um construtor que inicialize esses atributos. Implemente os métodos converterDuracaoHoras(), que retorna a duração do filme em horas, podeAssistir(int idade), que retorna true se a idade informada for maior ou igual à classificação etária, e descricaoFilme(), que retorna uma string com as informações do filme.
 
 - 9 - Crie uma classe chamada Livro com os atributos titulo, autor, paginas e emprestado (boolean). Crie um construtor que inicialize os atributos. Implemente os métodos emprestar(), que marca o livro como emprestado caso esteja disponível e retorna true, devolver(), que marca o livro como disponível novamente, estaDisponivel(), que retorna true caso o livro não esteja emprestado, e detalhesLivro(), que retorna uma string contendo as informações do livro.
