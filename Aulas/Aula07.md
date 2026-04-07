@@ -3,7 +3,7 @@
 - private: permite somente que a própria classe possa acessar o membro.
 - protected: permite que as subclasses e classes do mesmo pacote possam acessar o membro.
 - default: permite que as classes do mesmo pacote possam acessar o membro.
-- # Funções getters e setters
+## Funções getters e setters
 - getters: método que obtém as informações que queremos do atributo.
 - setters: métodos usados para alterar o valor de um atributo; define valores
 - exemplo: atributo privado "nome" = "getNome()", "setNome()"
@@ -53,4 +53,73 @@ public class Principal {
 	}
 
 }
+```
+## Diagrama de Classes
+- (- atributo ) = privado
+- ( + metodo()) = publico
+
+## Exemplo 
+### Classe
+```
+package pkg;
+
+public class Aluno {
+	private String nome;
+	private double nota1, nota2;
+	
+	public Aluno(String nome, int nota1, int nota2) {
+		this.nome = nome;
+		this.nota1 = nota1;
+		this.nota2 = nota2;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public double getNota1() {
+		return nota1;
+	}
+	
+	public double getNota2() {
+		return nota2;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public void setNota1(int nota1) {
+		this.nota1 = nota1;
+	}
+	
+	public void setNota2(int nota2) {
+		this.nota2 = nota2;
+	}
+	
+	public double calculaMedia() {
+		return (nota1 + nota2)/2;
+	}
+	
+}
+```
+### Main
+```
+package pkg;
+
+import java.util.Scanner;
+
+public class PrincipalAluno {
+
+	public static void main(String[] args) {
+		Aluno l = new Aluno("Maria", 8, 10);
+		Scanner teclado = new Scanner (System.in);
+		
+		System.out.println("Nome do aluno: " + l.getNome());
+		System.out.println("Nota 1: " + l.getNota1());
+		System.out.println("Nota 2: " + l.getNota2());
+		System.out.println("Média final: " + l.calculaMedia());
+	}
+}
+
 ```
