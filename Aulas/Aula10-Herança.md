@@ -44,7 +44,7 @@ public class Onibus extends Carro{
 	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
-	
+	@Override
 	public void exibeMsg() {
 		System.out.println("Estou na classe Onibus");
 		System.out.println("O onibus é: " + nome);
