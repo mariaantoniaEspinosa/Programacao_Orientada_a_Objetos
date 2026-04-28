@@ -35,7 +35,25 @@ package pacote;
 
 public class Onibus extends Carro{
 	
+	private String modelo;
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	
+	public void exibeMsg() {
+		System.out.println("Estou na classe Onibus");
+		System.out.println("O onibus é: " + nome);
+		System.out.println("O modelo do onibus é: " + modelo);
+	}
+	
+	
 }
+
 ```
 - classe Principal
 ```
@@ -50,9 +68,11 @@ public class Principal {
 		
 		Onibus o = new Onibus();
 		o.nome = "Marcopolo";
+		o.setModelo("OM-1519");
 		o.exibeMsg();
 
 	}
 
 }
+
 ```
