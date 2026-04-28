@@ -152,7 +152,30 @@ public class Principal {
 ```
 # Lidando com Construtor
 * pegar exemplo dos slides 
+```
+// Superclasse (Classe Pai)
+class Animal {
+    String nome;
 
+    // Construtor da Superclasse
+    public Animal(String nome) {
+        this.nome = nome;
+    }
+}
+
+// Subclasse (Classe Filha)
+class Cachorro extends Animal {
+    String raca;
+
+    // Construtor da Subclasse
+    public Cachorro(String nome, String raca) {
+        // Chamada ao construtor da superclasse é obrigatória
+        super(nome); 
+        this.raca = raca;
+    }
+}
+
+```
 
 # Herança Múltipla 
 - Classe 1
