@@ -1,0 +1,58 @@
+# Herança
+- reutilização de software
+- alterações em cascata
+- *extends*
+- Java não permite herança múltipla: uma classe não herda de duas classes
+- É permitido somente: classe 2 extends classe 1 e classe 3 extends classe 2
+## Exemplo
+- classe Carro
+```
+package pacote;
+
+public class Carro {
+	protected String nome;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public void exibeMsg() {
+		System.out.println("Estou na classe Carro");
+		System.out.println("O carro é: " + nome); //pode usar this.nome
+	}
+	
+	
+	
+}
+```
+- classe Onibus que herda da classe Carro
+```
+package pacote;
+
+public class Onibus extends Carro{
+	
+}
+```
+- classe Principal
+```
+package pacote;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Carro c = new Carro();
+		c.nome = "Fusca";
+		c.exibeMsg();
+		
+		Onibus o = new Onibus();
+		o.nome = "Marcopolo";
+		o.exibeMsg();
+
+	}
+
+}
+```
