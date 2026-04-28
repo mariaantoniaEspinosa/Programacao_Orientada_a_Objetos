@@ -76,3 +76,23 @@ public class Principal {
 }
 
 ```
+## Jogo rápido [1]
+- Crie uma classe Animal com os seguintes atributos: nome, idade e som. Em seguida, crie uma classe Cachorro qu herda de Animal e adiciona um atributo raça. Crie um método na classe Cachorro chamado latir() que exibe o som do cachorro.
+*pegar desenvolvimento dos slides
+
+- Classe Animal
+```
+
+```
+
+- Classe Cachorro
+```
+
+```
+
+- Classe Principal
+```
+
+```
+# Lidando com Construtor
+* pegar exemplo dos slides 
