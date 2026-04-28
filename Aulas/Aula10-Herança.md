@@ -82,17 +82,150 @@ public class Principal {
 
 - Classe Animal
 ```
+package pacote2;
 
+public class Animal {
+	private String nome;
+	private int idade;
+	protected String som;
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getIdade() {
+		return idade;
+	}
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+	public String getSom() {
+		return som;
+	}
+	public void setSom(String som) {
+		this.som = som;
+	}
+	
+}
 ```
 
 - Classe Cachorro
 ```
+package pacote2;
 
+public class Cachorro extends Animal {
+	private String raca;
+
+	public String getRaca() {
+		return raca;
+	}
+
+	public void setRaca(String raca) {
+		this.raca = raca;
+	}
+	
+	public void latir() {
+		System.out.println(som);
+	}
+}
 ```
 
 - Classe Principal
 ```
+package pacote2;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Cachorro c = new Cachorro();
+		c.setNome("Amarelo");
+		c.setIdade(10);
+		c.setSom("Au-au");
+		c.setRaca("Vira-Lata");
+		c.latir();
+
+	}
+
+}
 
 ```
 # Lidando com Construtor
 * pegar exemplo dos slides 
+
+
+# Herança Múltipla 
+- Classe 1
+```
+package pacote4;
+
+public class Desenho {
+	protected String nomeAutor;
+
+	public String getNomeAutor() {
+		return nomeAutor;
+	}
+
+	public void setNomeAutor(String nomeAutor) {
+		this.nomeAutor = nomeAutor;
+	}
+	
+	
+}
+
+```
+
+- Classe 2
+```
+package pacote4;
+
+public class Desenho2D extends Desenho {
+	protected int largura;
+	protected int altura;
+	
+	public Desenho2D(int largura, int altura) {
+		super();
+		this.largura = largura;
+		this.altura = altura;
+	}
+	
+}
+
+```
+
+- Classe 3
+```
+package pacote4;
+
+public class Quadrado extends Desenho2D {
+	protected String desc;
+
+	public Quadrado(int largura, int altura, String desc) {
+		super(largura, altura);
+		this.desc = desc;
+	}
+	
+	public void exibeDados() {
+		System.out.println("Largura: " + this.largura); //desenho2D
+		System.out.println("Altura: " + this.altura); //desenho2D
+		System.out.println("Descrição: " + this.desc); //Quadrado
+		System.out.println("Autor: " + this.getNomeAutor()); //Desenho
+	}
+}
+```
+
+- Main
+```
+package pacote4;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Quadrado q = new Quadrado(100, 150, "Quadrado da Maria");
+		q.setNomeAutor("Maria Antonia");
+		q.exibeDados();
+
+	}
+
+}
+```
