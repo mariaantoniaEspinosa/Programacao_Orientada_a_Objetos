@@ -175,7 +175,17 @@ public class Calculadora {
 	public int somar(int x, int y, int z) {
 		return x + y + z;
 	}
+
+	public double somar(double x, double y) {
+		return x + y;
+	}
+	public int multiplicar(int x, int y) {
+		return x * y;
+	}
 	
+	public double multiplicar(double x, double y) {
+		return x * y;
+	}
 }
 ```
 - Classe Principal
@@ -189,6 +199,12 @@ public class Principal {
 		System.out.println("Soma:  " + resultado);
 		resultado = c.somar(4, 7, 9);
 		System.out.println("Soma 2: " + resultado);
+		double resultado2 = c.somar(3.5,  7);
+		System.out.println("Soma 3: " + resultado2);
+		resultado = c.multiplicar(5, 5);
+		System.out.println("Multiplicação 1: " + resultado);
+		resultado2 = c.multiplicar(5.5, 5.6);
+		System.out.println("Multiplicação 2: " + resultado2);
 	}
 }
 
