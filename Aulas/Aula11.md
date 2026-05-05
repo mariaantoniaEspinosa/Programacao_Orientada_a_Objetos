@@ -57,7 +57,7 @@ REFAZER
   - mesmo none, mesmo parametros e mesmo tipo de retorno, só muda a implementação (override)
 - Sobrecarga de métodos:
   - mesmo nome, parametros diferentes e tipos de retornos diferentes (overload)
-### Exemplo
+### Exemplo 1 - sobrecrita
 - Classe Animal
 ```
 package pkg;
@@ -107,4 +107,89 @@ public class Principal {
 
 	}
 }
+```
+### Exemplo 2 - sobrescrita
+- Classe Pessoa
+```
+package pkg2;
+
+public class Pessoa {
+	public void trabalhar() {
+		System.out.println("Trabalhando");
+	}
+}
+
+```
+- Classe Programador
+```
+package pkg2;
+
+public class Programador extends Pessoa{
+	public void trabalhar() {
+		System.out.println("Programando");
+	}
+}
+```
+- Classe Principal
+```
+package pkg2;
+
+import java.util.Scanner;
+
+public class Principal {
+	public static void main(String[] args) {
+		/*System.out.println("Pessoa: ");
+		Pessoa p = new Pessoa();
+		p.trabalhar();
+		
+		System.out.println("Programador: ");
+		Programador pg = new Programador();
+		pg.trabalhar();*/
+		
+		Pessoa pessoa;
+		System.out.println("Digite 1 para pessoa");
+		System.out.println("Digite 2 para programador");
+		Scanner teclado = new Scanner (System.in);
+		int op = teclado.nextInt();
+		if(op==1) {
+			pessoa = new Pessoa();
+			pessoa.trabalhar();
+		} else if(op==2) {
+			pessoa = new Programador();
+			pessoa.trabalhar();
+		}
+	}
+}
+
+```
+### Exemplo 1 - sobrecarga
+- Classe Calculadora 
+```
+package pkg3;
+
+public class Calculadora {
+	public int somar(int x, int y) {
+		return x + y;
+	}
+	
+	public int somar(int x, int y, int z) {
+		return x + y + z;
+	}
+	
+}
+```
+- Classe Principal
+```
+package pkg3;
+
+public class Principal {
+	public static void main(String[] args) {
+		Calculadora c = new Calculadora();
+		int resultado = c.somar(4,  3);
+		System.out.println("Soma:  " + resultado);
+		resultado = c.somar(4, 7, 9);
+		System.out.println("Soma 2: " + resultado);
+	}
+}
+
 ```
