@@ -209,3 +209,33 @@ public class Principal {
 }
 
 ```
+### Exemplo 2 - sobrecarga
+- Classe Pessoa
+```
+package pkg3;
+
+public class Pessoa {
+	public void Ola() {
+		System.out.println("Olá!");
+	}
+	
+	public void Ola(String nome) {
+		System.out.println("Olá " + nome);
+	}
+}
+```
+- Classe Principal
+```
+package pkg3;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Pessoa p = new Pessoa();
+
+		p.Ola();
+		p.Ola("Maria");
+	}
+
+}
+```
