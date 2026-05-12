@@ -79,3 +79,58 @@ public class Pessoa {
 # Listas
 - *List*
 - Classes: *ArrayList*, *LinkedList* e *Vector*
+#
+- Main
+```
+package pacote02;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Principal {
+	public static void main(String[] args) {
+		List<Pessoa> listaPessoas = new ArrayList<Pessoa>();
+		
+		Pessoa p1 = new Pessoa ("Maria", 20);
+		Pessoa p2 = new Pessoa ("João", 30);
+		Pessoa p3 = new Pessoa ("Ste", 10);
+		
+		listaPessoas.add(p1);
+		listaPessoas.add(p2);
+		listaPessoas.add(p3);
+		
+		//chamando um método e passando a lista como parâmetro 
+		exibirPessoas(listaPessoas);
+	}
+	
+	public static void exibirPessoas(List<Pessoa> lista) {
+		for(Pessoa p : lista) {
+			System.out.println("Nome: " + p.getNome());
+			System.out.println("Idade: " + p.getIdade());
+		}
+	}
+}
+```
+- Classe Pessoa
+```
+package pacote02;
+
+public class Pessoa {
+	private String nome;
+	private int idade;
+	
+	public Pessoa(String nome, int idade) {
+		this.nome = nome;
+		this.idade = idade;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+	
+}
+```
