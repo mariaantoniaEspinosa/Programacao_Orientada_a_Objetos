@@ -79,6 +79,7 @@ public class Pessoa {
 # Listas
 - *List*
 - Classes: *ArrayList*, *LinkedList* e *Vector*
+- Métodos mais comuns: add, remove, get, set, size...
 #
 - Main
 ```
