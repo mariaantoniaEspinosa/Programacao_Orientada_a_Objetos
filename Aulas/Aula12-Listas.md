@@ -76,3 +76,6 @@ public class Pessoa {
 	
 }
 ```
+# Listas
+- *List*
+- Classes: *ArrayList*, *LinkedList* e *Vector*
