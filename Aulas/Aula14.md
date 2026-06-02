@@ -28,9 +28,24 @@ public class Cachorro extends Animal{
 }
 
 ```
+- Classe Tigre
+```
+package pkg;
+
+public class Tigre extends Animal {
+
+	@Override
+	public void emiteSom() {
+		System.out.println("grooow");
+	}
+
+}
+```
 - Classe Principal
 ```
 package pkg;
+
+import java.util.Scanner;
 
 public class Principal {
 	public static void main(String[] args) {
@@ -38,8 +53,26 @@ public class Principal {
 		
 		Cachorro c = new Cachorro();
 		c.emiteSom();
+		
+		Tigre t = new Tigre();
+		t.emiteSom();
+		
+		
+		Scanner teclado = new Scanner(System.in);
+		Animal a;
+		int op;
+		System.out.println("Digite 1 para instanciar um cachorro ou 2 para instanciar um tigre: ");
+		op = teclado.nextInt();
+		if(op == 1) {
+			a = new Cachorro();
+			a.emiteSom();
+		} else {
+			a = new Tigre();
+			a.emiteSom();
+		}
 	}
 }
+
 
 ```
 # Interfaces
