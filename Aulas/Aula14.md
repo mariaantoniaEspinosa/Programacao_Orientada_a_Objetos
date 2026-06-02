@@ -11,7 +11,16 @@
 package pkg;
 
 public abstract class Animal {
+	
 	public abstract void emiteSom();
+	
+	public String especie;
+	public int idade;
+	
+	public void exibeInfo() {
+		System.out.println("Idade: " + idade);
+		System.out.println("Espécie: " + especie);
+	}
 }
 ```
 - Classe Cachorro
@@ -57,22 +66,26 @@ public class Principal {
 		Tigre t = new Tigre();
 		t.emiteSom();
 		
-		
 		Scanner teclado = new Scanner(System.in);
 		Animal a;
 		int op;
+		
 		System.out.println("Digite 1 para instanciar um cachorro ou 2 para instanciar um tigre: ");
 		op = teclado.nextInt();
+		
 		if(op == 1) {
 			a = new Cachorro();
-			a.emiteSom();
+			a.especie = "Labrador";
+			a.idade = 10;
 		} else {
 			a = new Tigre();
-			a.emiteSom();
+			a.especie = "Tigrão";
+			a.idade = 8;
 		}
+		a.emiteSom();
+		a.exibeInfo();
 	}
 }
-
 
 ```
 # Interfaces
