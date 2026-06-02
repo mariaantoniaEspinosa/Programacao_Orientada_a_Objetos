@@ -5,7 +5,7 @@
   - método abstrato: sem implementação; deve ser implementado por qualquer classe que estenda a classe abstrata.
 - *abstract* antes da palavra *class*.
 - definem uma interface comum ...(resto no slide)
-## Exemplo 
+## Exemplo 01 
 - Classe Animal
 ```
 package pkg;
@@ -88,6 +88,74 @@ public class Principal {
 }
 
 ```
+## Exemplo 02
+- Classe Forma
+```
+package pkg2;
 
+public abstract class Forma {
+	public abstract double area();
+	public abstract double perimetro();
+}
+
+```
+- Classe Retangulo
+```
+package pkg2;
+
+public class Retangulo extends Forma {
+
+	public double largura;
+	public double altura;
+	
+	public Retangulo(double largura, double altura) {
+		super();
+		this.largura = largura;
+		this.altura = altura;
+	}
+
+	@Override
+	public double area() {
+		return largura * altura;
+	}
+
+	@Override
+	public double perimetro() {
+		return 2 * (largura * altura);
+	}
+
+}
+```
+- Classe Circulo
+```
+package pkg2;
+
+public class Circulo extends Forma {
+
+	public double raio;
+	
+	
+	public Circulo(double raio) {
+		super();
+		this.raio = raio;
+	}
+
+	@Override
+	public double area() {
+		return Math.PI * Math.pow(raio, 2);
+	}
+
+	@Override
+	public double perimetro() {
+		return 2 * Math.PI * raio;
+	}
+
+}
+
+```
+- Clase Principal
+```
+
+```
 
 # Interfaces
