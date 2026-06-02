@@ -182,7 +182,8 @@ public class principal {
 - implicitamente definidos
 - sem modificador de acesso
 - deve implementar todos os métodos!
-
+- assinaturas dos métodos
+- declarar atributo somente como *constance* (não aconselhado)
 
 ## Exemplo 01
 - Classe Animal 
