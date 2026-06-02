@@ -278,3 +278,15 @@ public class Principal {
 
 }
 ```
+# Diferenças Classe Abstrata X Interfaces
+- classe abstrata:
+  - tem métodos não abstratos e abstratos
+  - pode ter construtores
+  - diferentes níveis de visibilidade
+  - criada quando se deseja criar uma classe base com algumas implementações e comportamentos já definidos
+- interface:
+  - só tem método abstratos
+  - não pode ter construturores
+  - somente atributos *public* e *static*
+  - mais restritiva
+  - conjunto de declaração de métodos sem implementações
