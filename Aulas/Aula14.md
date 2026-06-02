@@ -175,3 +175,105 @@ public class principal {
 ```
 
 # Interfaces
+- contrato que define um conjunto de métodos que uma classe deve implementar
+- palavra-chave *interface*, *implements*
+- diferentes classes podem implementar seus comportamentos para métodos definidos em comum
+- padrão: *public*, *abstract* -> são mpetodos abstratos e públicos
+- implicitamente definidos
+- sem modificador de acesso
+- deve implementar todos os métodos!
+
+
+## Exemplo 01
+- Classe Animal 
+```
+package pkg3;
+
+public interface Animal {
+	// não usamos MODIFICADORES (public...)
+	void emitirSom();
+	void exibirInfo();
+	boolean verificarVacinacao();
+}
+
+```
+- Classe Cachorro
+```
+package pkg3;
+
+public class Cachorro implements Animal {
+
+	public String nome;
+	public String raca; 
+	public int idade;
+	
+	@Override
+	public void exibirInfo() {
+		System.out.println("CACHORRO ");
+		System.out.println("Nome: " + nome);
+		System.out.println("raça: " + raca);
+		System.out.println("Idade: " + idade);
+	}
+	
+	@Override
+	public void emitirSom() {
+		System.out.println("au au");
+	}
+
+	@Override
+	public boolean verificarVacinacao() {
+		System.out.println("Verificando vacinação do cachorro...");
+		return false;
+	}
+
+}
+
+```
+- Classe Gato
+```
+package pkg3;
+
+public class Gato implements Animal{
+	
+	@Override
+	public void exibirInfo() {
+		System.out.println("CLASSE GATO");
+	}
+	
+	@Override
+	public void emitirSom() {
+		System.out.println("miau!");
+	}
+
+	@Override
+	public boolean verificarVacinacao() {
+		System.out.println("Verificando vacinação do gato...");
+		return true;
+	}
+
+}
+
+```
+- Classe Principal
+```
+package pkg3;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Cachorro c = new Cachorro();
+		c.nome = "Caramelo";
+		c.idade = 3;
+		c.raca = "SRD";
+		c.exibirInfo();
+		c.emitirSom();
+		System.out.println(c.verificarVacinacao());
+		
+		Gato g = new Gato();
+		g.exibirInfo();
+		g.emitirSom();
+		System.out.println(g.verificarVacinacao());
+	}
+
+}
+```
