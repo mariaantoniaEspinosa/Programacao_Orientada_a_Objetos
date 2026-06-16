@@ -256,3 +256,96 @@ public class Principal {
 - salvar o estado de um objeto para recriá-lo quando necessário.
 - processo inverso: desserialização
 - garante a comunicação entre aplicações.
+### Exemplo
+- Classe Produto
+```
+package exemplo3;
+
+import java.io.Serializable;
+
+public class Produto implements Serializable {
+	private String codigo;
+	private String nome;
+	private double preco;
+	private transient String temporario;
+	
+	//transient: objeto vai ser ignorado pelo sistema
+	
+	public Produto(String codigo, String nome, double preco, String temporario) {
+		super();
+		this.codigo = codigo;
+		this.nome = nome;
+		this.preco = preco;
+		this.temporario = temporario;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public double getPreco() {
+		return preco;
+	}
+
+	public String getTemporario() {
+		return temporario;
+	}
+	
+	@Override
+	public String toString() {
+		return "Produto [codigo = " + codigo + ", nome = " + nome + ", preço = " + preco + "]";
+	}
+	
+
+}
+
+```
+- Classe Principal
+```
+package exemplo3;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+public class Principal {
+	public static void main(String[] args) {
+		Produto produto = new Produto("ABC123", "Exemplo de Produto", 9.99, "Caso temporário");
+		
+		//Serialização
+		try {
+			FileOutputStream arquivoSaida = new FileOutputStream("produto.ser");
+			ObjectOutputStream objetoSaida = new ObjectOutputStream(arquivoSaida);
+			
+			objetoSaida.writeObject(produto);
+			objetoSaida.close();
+			arquivoSaida.close();
+			System.out.println("Objeto serializado e salvo em produto.ser");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		//Desserialização
+		try {
+			FileInputStream arquivoEntrada = new FileInputStream("produto.ser");
+			ObjectInputStream objetoEntrada = new ObjectInputStream (arquivoEntrada);
+			
+			Produto produtoDesserializado = (Produto) objetoEntrada.readObject();
+			objetoEntrada.close();
+			arquivoEntrada.close();
+			
+			System.out.println("Objeto desserializado: " + produtoDesserializado);
+			System.out.println("Vai apresentar NULL: " + produtoDesserializado.getTemporario());
+		} catch (IOException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+```
