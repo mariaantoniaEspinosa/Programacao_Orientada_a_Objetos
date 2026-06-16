@@ -6,7 +6,7 @@
   - FileReader: usada para ler caracteres de um arquivo
   - BufferedReader: usada para ler grandes quantidades de caracteres de um fluxo de entrada em melhor desempenho
 ### Exemplo
-- Classe Principal - Escrevendo os alunos em um arquivo
+- Classe Principal 
 ```
 package exemplo1;
 
