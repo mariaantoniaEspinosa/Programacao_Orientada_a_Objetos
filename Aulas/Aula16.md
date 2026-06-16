@@ -97,3 +97,157 @@ public class Aluno {
 	
 }
 ```
+### Continuação do Exemplo
+- Classe Arquivo
+```
+package exemplo2;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import exemplo1.Aluno;
+
+public class Arquivo {
+	private FileWriter arqw;
+	private BufferedWriter escritor;
+	private FileReader arqr;
+	private BufferedReader leitor;
+	private List<Aluno> listAlunos;
+	private String nomeArquivo;
+	
+	public Arquivo(String nomeArquivo) {
+		this.nomeArquivo = nomeArquivo;
+		listAlunos = new ArrayList<>();
+	}
+	
+	public void gravarArquivo(Aluno a) {
+		//Escrevendo os alunos em um arquivo de texto
+		try {
+			//escrevendo os alunos no arquivo
+			arqw = new FileWriter(nomeArquivo + ".txt", true);
+			escritor = new BufferedWriter(arqw);
+			escritor.write(a.getNome() + ", " + a.getIdade());
+			escritor.newLine();
+			escritor.close();
+			arqw.close();
+			
+			System.out.println("Alunos salvos no arquivo aluno");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public List<Aluno> leArquivo(){
+		//Lendo os alunos do arquivo
+		
+		System.out.println("Alunos lidos do arquivo");
+		try {
+			arqr = new FileReader (nomeArquivo+ ".txt");
+			leitor = new BufferedReader(arqr);
+			String linha;
+			while((linha = leitor.readLine()) != null){
+				String [] campos = linha.split(", ");
+				
+				String nome = campos[0];
+				int idade = Integer.parseInt(campos[1]);
+				Aluno aluno = new Aluno (nome, idade);
+				listAlunos.add(aluno);
+			}
+			
+			leitor.close();
+			arqr.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return listAlunos;
+	}
+}
+
+```
+- Classe Principal
+```
+package exemplo2;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import exemplo1.Aluno;
+
+public class Principal {
+	public static void main(String[] args) {
+		//Criando objetos aluno
+		/*Aluno aluno1 = new Aluno("João", 20);
+		Aluno aluno2 = new Aluno("Maria", 22);
+		Aluno aluno3 = new Aluno("Alziras", 19);
+		
+		List<Aluno> lista = new ArrayList<>();
+		
+		Arquivo arquivo = new Arquivo ("alunos");
+		
+		arquivo.gravarArquivo(aluno1);
+		arquivo.gravarArquivo(aluno2);
+		arquivo.gravarArquivo(aluno3);
+		
+		lista = arquivo.leArquivo();
+		
+		for(Aluno a : lista) {
+			System.out.println("Nome: " + a.getNome() + ", Idade: " + a.getIdade());
+		}*/
+		
+		Scanner teclado = new Scanner(System.in);
+		Arquivo arquivo = new Arquivo ("alunos");
+		List<Aluno> lista;
+		
+		int op = 0;
+		
+		while(op != 3) {
+			System.out.println("1- Cadastrar Aluno");
+			System.out.println("2- Listas Alunos");
+			System.out.println("3- Sair");
+			System.out.println("EScolha uma opção: ");
+			op = teclado.nextInt();
+			teclado.nextLine();
+			
+			switch(op) {
+			case 1:
+				System.out.println("Digite o nome do aluno: ");
+				String nome = teclado.nextLine();
+				
+				System.out.println("Digite a idade do aluno: ");
+				int idade = teclado.nextInt();
+				teclado.nextLine();
+				
+				Aluno novoAluno = new Aluno(nome, idade);
+				arquivo.gravarArquivo(novoAluno);
+				break;
+			case 2:
+				lista = arquivo.leArquivo();
+				if(lista == null || lista.isEmpty()) {
+					System.out.println("Nenhum aluno cadastrado");
+				} 
+				else {
+					for(Aluno a : lista) {
+						System.out.println("Nome: " + a.getNome() + ", Idade: " + a.getIdade());
+						
+					}
+				}
+				break;
+			case 3:
+				System.out.println("Programa encerrado");
+				break;
+			default:
+				System.out.println("Opção inválida");
+				break;
+			}
+		}
+		teclado.close();
+	}
+}
+
+```
