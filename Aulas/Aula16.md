@@ -251,3 +251,8 @@ public class Principal {
 }
 
 ```
+## Serialização e Desserialização
+- processo de converter um objeto em um fluxo de bytes para armazenar o objeto ou transmiti-lo para a memória, um banco de dados ou um arquivo.
+- salvar o estado de um objeto para recriá-lo quando necessário.
+- processo inverso: desserialização
+- garante a comunicação entre aplicações.
